@@ -8,17 +8,16 @@
 			width: 100px;
 			height: 100px;
 			background-color: #f00;
-			display: none;
 		}
 	</style>
 </head>
 <body>
-	<button>渐入</button>
+	<button>移动</button>
 	<div class="box"></div>
 	<script src="script/jquery.js"></script>
 	<script>
 		$("button").click(function(){
-			$(".box").fadeIn(500);  // 500毫秒后显示
+			$(".box").animate({marginLeft:"300px",marginTop:"100px"},500);  
 		});
 	</script>
 </body>

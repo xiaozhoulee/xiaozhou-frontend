@@ -8,17 +8,16 @@
 			width: 100px;
 			height: 100px;
 			background-color: #f00;
-			display: none;
 		}
 	</style>
 </head>
 <body>
-	<button>下拉</button>
+	<button>渐出</button>
 	<div class="box"></div>
 	<script src="script/jquery.js"></script>
 	<script>
 		$("button").click(function(){
-			$(".box").slideDown(500);  // 500毫秒后显示
+			$(".box").fadeOut(500);  // 500毫秒后隐藏
 		});
 	</script>
 </body>

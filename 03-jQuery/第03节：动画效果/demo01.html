@@ -12,13 +12,17 @@
 	</style>
 </head>
 <body>
-	<button>隐藏</button>
+	<button  class="hide">隐藏</button>
+	<button  class="show">显示</button>
 	<div class="box"></div>
 	<script src="script/jquery.js"></script>
 	<script>
-		$("button").click(function(){
+		$(".hide").click(function(){
 			$(".box").hide(500);  // 500毫秒后隐藏
 		});
+		$(".show").click(function(){
+			$(".box").show(500)
+		})
 	</script>
 </body>
 </html>

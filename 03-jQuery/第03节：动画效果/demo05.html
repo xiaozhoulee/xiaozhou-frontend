@@ -8,16 +8,17 @@
 			width: 100px;
 			height: 100px;
 			background-color: #f00;
+			display: none;
 		}
 	</style>
 </head>
 <body>
-	<button>渐出</button>
+	<button>渐入</button>
 	<div class="box"></div>
 	<script src="script/jquery.js"></script>
 	<script>
 		$("button").click(function(){
-			$(".box").fadeOut(500);  // 500毫秒后隐藏
+			$(".box").fadeIn(500);  // 500毫秒后显示
 		});
 	</script>
 </body>
