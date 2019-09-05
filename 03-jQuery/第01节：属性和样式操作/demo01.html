@@ -2,12 +2,22 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
+    <title>Document</title>
+    <style>
+        .active{
+            background-color: red;
+        }
+    </style>
 </head>
 <body>
+	<ul class="nav">
+		<li>香蕉</li>
+		<li>苹果</li>
+		<li>鸭梨</li>
+	</ul>
 	<script src="script/jquery.js"></script>
 	<script>
-		//这里可以编写jQuery代码
+		$(".nav li:eq(1)").addClass("active");
 	</script>
 </body>
 </html>

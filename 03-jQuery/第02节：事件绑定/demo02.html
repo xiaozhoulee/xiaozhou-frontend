@@ -1,17 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Document</title>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .box{
+            width:100px;
+            height:100px;
+            background-color:red;
+        }
+        .bg{
+            background-color: green
+        }
+    </style>
 </head>
 <body>
-	<img src="images/0302_img0.jpg">
-	
-	<script src="script/jquery.js"></script>
-	<script>
-		$("img").click(function(){
-			$(this).attr("src","images/0302_img1.jpg")
-		});
-	</script>
+    <div class="box"></div>
+    <script src="script/jquery.js"></script>
+    <script>
+        $(".box").hover(function(){
+            $(this).addClass("bg");
+        },function(){
+            $(this).removeClass("bg");
+        })
+    </script>  
 </body>
 </html>

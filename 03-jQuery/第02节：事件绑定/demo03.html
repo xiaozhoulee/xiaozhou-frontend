@@ -3,18 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
+    <style>
+        .box{
+            width:300px;
+            height:300px;
+            border:1px solid red;
+        }
+    </style>
 </head>
 <body>
-    <ul>
-        <li>1</li>
-        <li>2</li>
-        <li>3</li>
-    </ul> 
+    <div class="box"></div>
     <script src="script/jquery.js"></script>
     <script>
-        $("li").click(function(){
-            var i = $(this).index();
-            console.log(i);
+        $(".box").mousemove(function(e){
+            var x = e.pageX;
+            var y = e.pageY;
+            console.log("x轴的坐标是"+x);
+            console.log("y轴的坐标是"+y);
         })
     </script>  
 </body>
