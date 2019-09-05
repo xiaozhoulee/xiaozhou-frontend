@@ -6,10 +6,14 @@
 </head>
 <body>
 	<script>
-		function fun(){
-		    console.log("hello function")
+		var sum = 0;
+		for(var i = 0;i<=100;i++){
+			if(i%7===0){
+				continue;
+			}
+			sum += i;
 		}
-		fun(); 
+		console.log(sum);
 	</script>
 </body>
 </html>

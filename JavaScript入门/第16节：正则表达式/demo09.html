@@ -6,10 +6,9 @@
 </head>
 <body>
 	<script>
-		function fun(){
-		    console.log("hello function")
-		}
-		fun(); 
+		var reg = /[a-z]{3}/;  //匹配3位字母
+		var str = "012345abcde";  
+		console.log(reg.exec(str));
 	</script>
 </body>
 </html>

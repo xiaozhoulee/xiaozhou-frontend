@@ -5,11 +5,12 @@
 	<title>Document</title>
 </head>
 <body>
+	<button>按钮</button>
 	<script>
-		function fun(){
-		    console.log("hello function")
+		var btn = document.querySelector("btn");
+		btn.onclick = function(){
+			console.log("hello world");
 		}
-		fun(); 
 	</script>
 </body>
 </html>
