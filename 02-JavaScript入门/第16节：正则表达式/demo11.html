@@ -6,16 +6,16 @@
 </head>
 <body>
 	<input type="text">
-	<span></span>
+	<button>验证</button>
 	<script>
 		var input = document.querySelector("input");
-		var span = document.querySelector("span");
+		var btn = document.querySelector("button");
 		var reg = /^[a-zA-Z0-9\_]{5,12}\@[a-zA-Z0-9]{2,5}\.com$/; 
 		input.onblur = function(){
 			if(reg.test(this.value)){
-				span.innerHTML = "验证通过";
+				btn.innerHTML = "验证通过";
 			}else{
-				span.innerHTML = "验证失败";
+				btn.innerHTML = "验证失败";
 			}
 		}
 	</script>
