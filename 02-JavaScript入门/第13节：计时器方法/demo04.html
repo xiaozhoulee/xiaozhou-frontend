@@ -5,15 +5,17 @@
 	<title>Document</title>
 </head>
 <body>
-	<button>停止</button>
 	<script>
-		var btn = document.querySelector("button");
-		var t = setInterval(function(){
-			console.log("hello world");
-		},3000)
-		btn.onclick = function(){
-			clearTimeout(t);
+		var n = 1,t=0;
+		function showNumber(){
+			console.log(n);
+			if(n === 10){
+				clearInterval(t);
+			}
+			n++;
 		}
+		t=setInterval(showNumber,1000);
+		showNumber();   
 	</script>
 </body>
 </html>

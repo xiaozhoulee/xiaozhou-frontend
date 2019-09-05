@@ -5,10 +5,14 @@
 	<title>Document</title>
 </head>
 <body>
-	<h1>DOM样式测试</h1>
-	<script>
-		var h1 = document.querySelector("h1");
-		h1.style.color = "red";
-	</script>
+		<img src="../../images/0210_logo.jpg" alt="">
+		<button>切换图片</button>
+		<script>
+			var img = document.querySelector("img");
+			var btn = document.querySelector("button");
+			btn.onclick = function(){
+				img.src = "../../images/0210_img.jpg";
+			}
+		</script>
 </body>
 </html>

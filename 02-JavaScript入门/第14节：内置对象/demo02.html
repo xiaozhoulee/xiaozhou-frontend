@@ -5,18 +5,19 @@
 	<title>Document</title>
 </head>
 <body>
+	<h1></h1>
 	<script>
-		var pi = Math.PI;   
-		var num1 = Math.floor(pi);  //向下取整
-		var num2 = Math.ceil(pi);   //向上取整
-		var num3 = Math.round(pi);  //四舍五入
-		var num4 = Math.abs(-pi);   //获取绝对值
-		var num5 = Math.random();   //获取0~1之间的随机数
-		console.log(num1);
-		console.log(num2);
-		console.log(num3);
-		console.log(num4);
-		console.log(num5);
+		var h1 = document.querySelector("h1");
+		function getTime(){		
+			var dateNow = new Date();
+			var hours = dateNow.getHours();      
+			var minutes = dateNow.getMinutes();  
+			var seconds = dateNow.getSeconds(); 
+			var strTimeNow = hours + ":" + minutes + ":" + seconds;
+			h1.innerHTML = strTimeNow;
+		}
+		getTime();
+		setInterval(getTime,1000);
 	</script>
 </body>
 </html>

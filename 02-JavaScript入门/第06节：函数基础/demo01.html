@@ -6,11 +6,20 @@
 </head>
 <body>
 	<script>
-		function fun(){
-		    console.log("hello function")
+		function count(num1,sign,num2){
+			var result = 0;
+			switch(sign){
+				case "+":result = num1 + num2;break;
+				case "-":result = num1 - num2;break;
+				case "*":result = num1 * num2;break;
+				case "/":result = num1 / num2;break;
+				default:console.log("请输入真确的操作符")
+			}
+			return result;
 		}
-		fun(); 
-		fun(); 
+		console.log(count(10,"*",20));
+
+
 	</script>
 </body>
 </html>

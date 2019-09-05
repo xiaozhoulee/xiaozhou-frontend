@@ -5,17 +5,17 @@
 	<title>Document</title>
 </head>
 <body>
+	<p><span class="seconds">5</span>秒后跳转到百度</p>
 	<script>
-		var n = 1,t=0;
-		function showNumber(){
-			console.log(n);
-			if(n === 10){
-				clearInterval(t);
+		var seconds = document.querySelector(".seconds");
+		setInterval(function(){
+			var s = Number(seconds.innerHTML);
+			s--;
+			seconds.innerHTML = s;
+			if(s === 0){
+				location.href = "http://baidu.com";  //location.href可以实现页面跳转
 			}
-			n++;
-		}
-		t=setInterval(showNumber,1000);
-		showNumber();   
+		},1000)
 	</script>
 </body>
 </html>

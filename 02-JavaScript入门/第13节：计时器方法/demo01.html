@@ -5,10 +5,15 @@
 	<title>Document</title>
 </head>
 <body>
+	<button>停止</button>
 	<script>
-		setTimeout(function(){
+		var btn = document.querySelector("button");
+		var t = setTimeout(function(){
 			console.log("hello world");
 		},3000)
+		btn.onclick = function(){
+			clearTimeout(t);
+		}
 	</script>
 </body>
 </html>

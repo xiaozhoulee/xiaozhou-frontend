@@ -6,8 +6,21 @@
 </head>
 <body>
 	<script>
-		var number = Math.floor(Math.random()*10 + 1);
-		console.log(number);
+		var dateTarget = new Date("2017-5-1 17:30:20");
+		var year = dateTarget.getFullYear();   
+		var month = dateTarget.getMonth();     
+		var date = dateTarget.getDate();       
+		var hours = dateTarget.getHours();      
+		var minutes = dateTarget.getMinutes(); 
+		var seconds = dateTarget.getSeconds(); 
+		var day = dateTarget.getDay();          
+		console.log(year);
+		console.log(month);
+		console.log(date);
+		console.log(hours);
+		console.log(minutes);
+		console.log(seconds);
+		console.log(day);
 	</script>
 </body>
 </html>

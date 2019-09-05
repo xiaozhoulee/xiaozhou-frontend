@@ -8,7 +8,7 @@
 	<button>停止</button>
 	<script>
 		var btn = document.querySelector("button");
-		var t = setTimeout(function(){
+		var t = setInterval(function(){
 			console.log("hello world");
 		},3000)
 		btn.onclick = function(){
