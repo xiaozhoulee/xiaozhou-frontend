@@ -6,12 +6,21 @@
 </head>
 <body>
 	<input type="text">
-	<button>获取并输出value</button>
+	<button>添加</button>
+	<ul class="fruits">
+		<li>香蕉</li>
+		<li>苹果</li>
+		<li>鸭梨</li>
+	</ul>
 	<script src="script/jquery.js"></script>
 	<script>
 		$("button").click(function(){
-			var value = $("input").val();  //获取input的value属性值，并赋值给value变量。
-			console.log(value);  
+			var val = $("input").val();
+			var newli = "<li>"+val+"</li>";
+			$(".fruits").append(newli);
+		})
+		$(".fruits li").click(function(){
+			$(this).remove();
 		})
 	</script>
 </body>

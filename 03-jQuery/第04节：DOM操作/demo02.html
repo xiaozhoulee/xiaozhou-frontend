@@ -6,11 +6,21 @@
 </head>
 <body>
 	<input type="text">
-	<button>设置value</button>
+	<button>添加</button>
+	<ul class="fruits">
+		<li>香蕉</li>
+		<li>苹果</li>
+		<li>鸭梨</li>
+	</ul>
 	<script src="script/jquery.js"></script>
 	<script>
 		$("button").click(function(){
-			var value = $("input").val("hello world");  //将input的value属性值设置为"hello world"
+			var val = $("input").val();
+			var newli = "<li>"+val+"</li>";
+			$(".fruits").append(newli);
+		})
+		$(".fruits").delegate("li","click",function(){
+			$(this).remove();
 		})
 	</script>
 </body>
