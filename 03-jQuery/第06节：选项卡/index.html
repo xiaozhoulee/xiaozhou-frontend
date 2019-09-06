@@ -17,21 +17,7 @@
 			clear: both;
 		}
 
-		/* 定义选项卡内容的样式 */
-		.content{
-			display: none;
-			width:300px;
-			height:200px;
-			border:1px solid red;
-			background-color:#aaa;
-		}
-
-		/* 显示激活的选项卡 */
-		.active{
-			display:block
-		}
-
-		/* tab按钮样式 */
+		/* 为tab按钮添加样式 */
 		.tab-btn li{
 			list-style: none;
 			float: left;
@@ -43,6 +29,21 @@
 			font-size: 14px;
 		}
 
+		/* 定义选项卡内容的样式 */
+		.content{
+			display: none;
+			width:300px;
+			height:200px;
+			border:1px solid red;
+			background-color:pink;
+		}
+
+		/* 显示激活的选项卡 */
+		.active{
+			display:block
+		}
+
+
 		/* 激活的按钮样式 */
 		.btn-active{
 			background-color: yellow;  
@@ -51,12 +52,16 @@
 </head>
 <body>
 	<div class="tab">
+		<!-- 首先布局选项卡的三个按钮 -->
 		<ul class="tab-btn clearFix">
-			<li class="btn-active">标签一</li>
-			<li>标签二</li>
-			<li>标签三</li>
+			<!-- 为初始按钮添加样式 -->
+			<li class="btn-active">水果</li>
+			<li>运动</li>
+			<li>书籍</li>
 		</ul>
+		<!-- 对应的三个内容框 -->
 		<div class="content-box">
+			<!-- 显示初始按钮对应的内容框 -->
 			<div class="content active">
 				<h3>水果</h3>
 				<p>香蕉、苹果、鸭梨</p>
@@ -67,7 +72,7 @@
 			</div>
 			<div class="content">
 				<h3>书籍</h3>
-				<p>JavaScript高级程序设计，JavaScript权威指南</p>
+				<p>JavaScript高级程序设计，JavaScript权威指南，jQuery开发实战</p>
 			</div>
 		</div>
 	</div>
@@ -78,11 +83,13 @@
 			$(this).addClass("btn-active")
 				.siblings()
 				.removeClass("btn-active");
-		
+		// 当点击按钮时，会是被点击的按钮添加btn-active样式，
+		// 并别清楚其他按钮的btn-active样式
+
 			//获取点击按钮的索引
 			var index = $(this).index(); 
 		
-			//通过索引找到对应content，并显示；其他content隐藏。
+			//通过索引找到对应content，并显示；其他内容框隐藏。
 			var jq = $(".content-box .content").eq(index)
 				.addClass("active")
 				.siblings()
