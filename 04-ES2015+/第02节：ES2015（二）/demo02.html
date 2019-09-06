@@ -1,16 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<title>Document</title>
+    <meta charset="UTF-8">
+    <title>Document</title>
 </head>
+
 <body>
-	<script>
-		const student = {
-			name:"小明",
-			age:2
-		}
-		console.log(`我是${student.name}，我今年${student.age}岁了`);
-	</script>
+    <script>
+        const person = {
+            firstName: "lee",
+            sing: function () {
+                console.log(this.firstName)
+            },
+            singDelay: function () {
+                let self = this
+                setTimeout(function () {
+                    console.log(self.firstName);
+                }, 2000)
+            }
+        }
+
+        person.sing();
+        person.singDelay();
+    </script>
 </body>
+
 </html>

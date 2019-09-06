@@ -1,15 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Document</title>
+    <meta charset="UTF-8">
+    <title>Document</title>
 </head>
 <body>
-	<script>
-		//模板字符串
-		let str = `hello
-		world`;
-		console.log(str);
-	</script>
+    <script>
+        const person = {
+            firstName:"lee",
+            sing:function(){
+                console.log(this.firstName)
+            },
+            singDelay:function(){
+                setTimeout(function(){
+                    console.log(this.firstName);
+                },2000)
+            }
+        }
+
+        person.sing();
+        person.singDelay();
+    </script>
 </body>
 </html>

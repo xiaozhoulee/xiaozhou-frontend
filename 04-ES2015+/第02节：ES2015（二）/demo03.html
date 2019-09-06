@@ -1,17 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<title>Document</title>
+    <meta charset="UTF-8">
+    <title>Document</title>
 </head>
+
 <body>
-	<script>
-		let x = 'hello';
-		let y = 'world';
-		function fn(x,y){
-			return x + y;
-		}
-		console.log(`程序员最常用的一句话是${fn(x,y)}`);
-	</script>
+    <script>
+        const person = {
+            firstName: "lee",
+            sing: function () {
+                console.log(this.firstName)
+            },
+            singDelay: function () {
+                setTimeout(() => {
+                    console.log(this.firstName);
+                }, 2000)
+            }
+        }
+
+        person.sing();
+        person.singDelay();
+    </script>
 </body>
+
 </html>
