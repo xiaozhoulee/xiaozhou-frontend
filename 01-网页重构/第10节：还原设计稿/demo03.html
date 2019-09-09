@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            margin: 0 auto;
+            box-sizing: border-box;
+        }
+        .header{
+            width: 1000px;
+            height: 158px;
+            border: 1px solid red;
+        }
+        .header .topbox{
+            width: 1000px;
+            height: 98px;
+            border: 1px solid sienna;
+        }
+        .header .bottombox{
+            width: 1000px;
+            height: 60px;
+            border: 1px solid sienna;
+        }
+        .header .bottombox .nav li{
+            float: left;
+            list-style: none;
+        }
+        .banner{
+            width: 1000px;
+            height: 463px;
+            border: 1px solid blue;
+        }
+        .container{
+            width: 1000px;
+            height: 796px;
+            border: 1px solid hotpink;
+        }
+        .container .topbox{
+            width: 1000px;
+            height: 242px;
+            border: 1px solid green;            
+        }
+        .container .topbox .TopBoxLeft{
+            width: 498px;
+            height: 240px;
+            border: 1px solid green;
+            float: left;
+        }
+        .container .topbox .TopBoxLeft .news li{
+            list-style: none;
+        }
+        .container .topbox .TopBoxMiddle{
+            width: 240px;
+            height: 240px;
+            border: 1px solid green;
+            float: left;
+        }
+        .container .topbox .TopBoxRight{
+            width: 254px;
+            height: 240px;
+            border: 1px solid green;
+            float: right;
+        }
+        .container .middlebox{
+            width: 1000px;
+            height: 230px;
+            border: 1px solid green;    
+            margin-top: 27px;  
+            padding-top: 30px;
+        }
+        .container .middlebox .MiddleBoxLeft{
+            width: 214px;
+            height: 197px;
+            border: 1px solid green;    
+            float: left;
+            margin-left: 20px;
+        }
+        .container .middlebox .MiddleBoxMiddle{
+            width: 214px;
+            height: 197px;
+            border: 1px solid green;    
+            float: left;
+            margin-left: 40px;
+        }
+        .container .middlebox .MiddleBoxMiddleTwo{
+            width: 214px;
+            height: 197px;
+            border: 1px solid green;    
+            float: left;
+            margin-left: 40px;
+        }
+        .container .middlebox .MiddleBoxRight{
+            width: 214px;
+            height: 197px;
+            border: 1px solid green;    
+            margin-right: 10px;
+            float: right;
+        }
+        .container .bottombox{
+            width: 1000px;
+            height: 248px;
+            border: 1px solid green;    
+            margin-top: 45px;     
+            padding-top: 28px;   
+        }
+        .container .bottombox .BottomBoxLeft{
+            width: 458px;
+            height: 203px;
+            border: 1px solid green;
+            float: left;
+            margin-left: 20px;
+        }
+        .container .bottombox .BottomBoxLeft .listone{
+            float: left;
+        }
+        .container .bottombox .BottomBoxLeft .listone li{
+            list-style: none;
+        }
+        .container .bottombox .BottomBoxLeft .listtwo{
+            float: left;
+        }
+        .container .bottombox .BottomBoxLeft .listtwo li{
+            list-style: none;
+        }
+        .container .bottombox .BottomBoxLeft .listthree li{
+            list-style: none;
+        }
+        .container .bottombox .BottomBoxMiddle{
+            width: 156px;
+            height: 203px;
+            border: 1px solid green;
+            margin-left: 47px;
+            float: left;
+        }
+        .container .bottombox .BottomBoxMiddle .listfive li{
+            list-style: none;
+        }
+        .container .bottombox .BottomBoxRight{
+            width: 256px;
+            height: 203px;
+            border: 1px solid green;
+            margin-left: 47px;
+            float: left;
+        }
+        .footer{
+            width: 1000px;
+            height: 80px;
+            border: 1px solid purple;
+        }
+        .footer .link li{
+            float: left;
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="topbox">
+            <img class="logo" src="../../images/0110logo.jpg" alt="">
+            <!-- 真实写网页的时候能用代码完成就用代码“卧龙控股”要用字写出来 -->
+            <input class="search" type="text" placeholder="SEARCH…">
+            <img class="PicMagnifier" src="../../images/0110fdj.jpg" alt="">
+        </div>
+        <div class="bottombox">
+            <ul class="nav">
+                <li>集团介绍</li>
+                <li>产品中心</li>
+                <li>卧龙市场</li>
+                <li>技术研发</li>
+                <li>国际合作</li>
+                <li>投资者关系</li>
+                <li>新闻资讯</li>
+                <li>人力资源</li>
+            </ul>
+        </div>
+    </div>
+    <div class="banner">
+        <img class="picbanner" src="../../images/0110banner.jpg" alt="">
+        <!-- 红色区域是要写出来的 -->
+    </div>
+    <div class="container">
+        <div class="topbox">
+            <div class="TopBoxLeft">
+                <h2>新闻资讯</h2>
+                <ul class="news">
+                    <li>陈建成董事长出席ATB集团召开年度销售大会<span class="date">2013-07-30</span></li>
+                    <li>中国电器工业协会分马力电机分会在卧龙召开董事长…<span class="date">2013-07-30</span></li>
+                    <li>陈建成董事长访问中国驻德大使馆<span class="date">2013-07-30</span></li>
+                    <li>企业文化十企业持续经营的关键<span class="date">2013-07-30</span></li>
+                    <li>陈建成监事长在ATB集团2013年销售会议上发表重要…<span class="date">2013-07-30</span></li>
+                    <li>喜迎七一唱响卧龙 年轻力量激发企业持久活力卧龙举…<span class="date">2013-07-30</span></li>
+                </ul>
+            </div>
+            <div class="TopBoxMiddle">
+                <h2>卧龙介绍</h2>
+                <p class="wordone">公司成立于1984年,</p>
+                <p class="wordtwo">经过近30年的发展</p>
+                <span>已成为电气制造，房地产开发和金融投资三业并举的综合型跨国…</span>
+            </div>
+            <div class="TopBoxRight">
+                <h2>人才招聘</h2>
+                <span>培养一流人才，锻造一流的工程实现员工与企业的共同发展</span>
+                <img class="picmore" src="../../images/0110more.jpg" alt="">
+                <img class="picflower" src="../../images/0110FLOWER.jpg" alt="">
+            </div>
+        </div>
+        <div class="middlebox">
+            <h2>卧龙市场</h2>
+            <div class="MiddleBoxLeft">
+                <img src="../../images/0110one.jpg" alt="" class="picone">
+                <span>交通轨道：由于主要采用电气牵引，而且摩擦阻力较小，与公共…</span>
+            </div>
+            <div class="MiddleBoxMiddle">
+                <img src="../../images/0110two.jpg" alt="" class="pictwo">
+                <span>节能环保：由于不断上涨的能源消耗和我们的专业知识，维护可持续…</span>
+            </div>
+            <div class="MiddleBoxMiddleTwo">
+                <img src="../../images/0110three.jpg" alt="" class="picthree">
+                <span>航空与船舰：如果你是在公海行驶，你需要确保你的船只的电力系统…</span>
+            </div>
+            <div class="MiddleBoxRight">
+                <img src="../../images/0110four.jpg" alt="" class="picFour">
+                <span>石油,天然气及采矿：在市场中的安全性,可靠性,效率和最短的停机…</span>
+            </div>
+        </div>
+        <div class="bottombox">
+            <div class="BottomBoxLeft">
+                <h2>产品中心</h2>
+                <ul class="listone">
+                    <li>><span>汽车电机</span></li>
+                    <li>><span>日用电机</span></li>
+                    <li>><span>特种电机</span></li>
+                    <li>><span>大公率电机</span></li>
+                    <li>><span>电工设备</span></li>
+                </ul>
+                <ul class="listtwo">
+                    <li>><span>工业驱动和自动化</span></li>
+                    <li>><span>高压变频和系统集成</span></li>
+                    <li>><span>混泥土搅拌机</span></li>
+                    <li>><span>电动车辆</span></li>
+                </ul>
+                <ul class="listthree">
+                    <li>><span>电池电源</span></li>
+                    <li>><span>输变电设备</span></li>
+                    <li>><span>楼盘信息</span></li>
+                    <li>><span>金融产品</span></li>
+                </ul>
+            </div>
+            <div class="BottomBoxMiddle">
+                <h2>技术研发</h2>
+                <ul class="listfive">
+                    <li>科技力量</li>
+                    <li>先进设备</li>
+                    <li>研发创新</li>
+                    <li>工艺流程</li>
+                </ul>
+            </div>
+            <div class="BottomBoxRight">
+                <h2>营销网络</h2>
+                <img src="../../images/0110picfive.jpg" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <ul class="link">
+            <li>网站地图</li>
+            <li>|</li>
+            <li>联系我们</li>
+            <li>|</li>
+            <li>关注卧龙</li>
+            <li>|</li>
+            <li>采购系统入口</li>
+        </ul>
+        <span>COPYRIGHT 2013 卧龙控股集团 版权所有 浙ICP备06005901号 技术支持:博彩互动 </span>
+        <span>分享到:</span>
+        <img src="../../images/0110link.jpg" alt="">
+        <!-- 这是实例真实写项目的时候要拆分成单个有ul li来写 -->
+    </div>
+</body>
+</html>
