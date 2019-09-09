@@ -5,17 +5,20 @@
 	<title>Document</title>
 </head>
 <body>
+
 	<div id="app">
-		<img v-bind:src="imgSrc">
+		<!-- 使用v-if进行条件判断，条件为true则显示此标签，false则不显示 -->
+		<p v-if="seen">现在你看到我了</p>
 	</div>
-	<script src="../../script/vue.js"></script>
+		<script src="../../script/vue.js"></script>
 	<script>
+	  //激活vue，给动态属性复制
 		new Vue({
 			el:"#app",
 			data:{
-				imgSrc:"../../images/img1.jpg"
+			  seen: true
 			}
 		})
 	</script>
-</body>
+	</body>
 </html>
