@@ -2,24 +2,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <style>
-        .box{
-            width:300px;
-            height:300px;
-            border:1px solid red;
-        }
-    </style>
 </head>
 <body>
-    <div class="box"></div>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul> 
+    <img src="images/0302_img0.jpg">
     <script src="script/jquery.js"></script>
     <script>
-        $(".box").mousemove(function(e){
-            var x = e.pageX;
-            var y = e.pageY;
-            console.log("x轴的坐标是"+x);
-            console.log("y轴的坐标是"+y);
+        var arr = ["images/0302_img0.jpg","images/0302_img1.jpg","images/0302_img2.jpg"];
+        $("li").click(function(){
+            var i = $(this).index();
+            var url = arr[i];  //获取图片的地址
+            $("img").attr("src",url);  //将图片的src属性设置成数组中指定的图片地址
         })
     </script>  
 </body>

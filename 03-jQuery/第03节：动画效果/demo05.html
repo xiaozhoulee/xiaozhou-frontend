@@ -3,23 +3,68 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
-	<style>
-		.box{
-			width: 100px;
-			height: 100px;
-			background-color: #f00;
+	<style type="text/css">
+		*{
+			margin:0px;
+			padding:0px;
+		}
+		li{
+			list-style: none;
+		}
+		#nav>li{
+			float: left;
+			list-style: none;
+			width:100px;
+			height:30px;
+			border:1px solid #aaa;
+			line-height: 30px;
+			text-align: center;
+		}
+		.inner-nav{
 			display: none;
 		}
 	</style>
 </head>
 <body>
-	<button>渐入</button>
-	<div class="box"></div>
+	<ul id="nav">
+		<li>
+			<a href="">书籍</a>
+			<ul class="inner-nav">
+				<li>js入门</li>
+				<li>DOM编程艺术</li>
+				<li>js设计模式</li>
+				<li>js教程</li>
+				<li>js权威指南</li>
+			</ul>
+		</li>
+		<li>
+			<a href="">书籍</a>
+			<ul class="inner-nav">
+				<li>js入门</li>
+				<li>DOM编程艺术</li>
+				<li>js设计模式</li>
+				<li>js教程</li>
+				<li>js权威指南</li>
+			</ul>
+		</li>
+		<li>
+			<a href="">书籍</a>
+			<ul class="inner-nav">
+				<li>js入门</li>
+				<li>DOM编程艺术</li>
+				<li>js设计模式</li>
+				<li>js教程</li>
+				<li>js权威指南</li>
+			</ul>
+		</li>
+	</ul>
 	<script src="script/jquery.js"></script>
 	<script>
-		$("button").click(function(){
-			$(".box").fadeIn(500);  // 500毫秒后显示
-		});
+		$("#nav>li").mouseenter(function(){
+			$(this).find("ul").slideDown(500);
+		}).mouseleave(function(){
+			$(this).find("ul").slideUp(500);
+		})
 	</script>
 </body>
 </html>

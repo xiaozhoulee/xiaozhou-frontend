@@ -19,7 +19,7 @@
 			var newli = "<li>"+val+"</li>";
 			$(".fruits").append(newli);
 		})
-		$(".fruits li").click(function(){
+		$(".fruits").delegate("li","click",function(){
 			$(this).remove();
 		})
 	</script>

@@ -1,24 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<title>Document</title>
-	<style>
-		.box{
-			width: 100px;
-			height: 100px;
-			background-color: #f00;
-		}
-	</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: #f00;
+        }
+    </style>
 </head>
+
 <body>
-	<button>上卷</button>
-	<div class="box"></div>
-	<script src="script/jquery.js"></script>
-	<script>
-		$("button").click(function(){
-			$(".box").slideUp(500);  // 500毫秒后隐藏
-		});
-	</script>
+    <button class="slideUp">上卷</button>
+    <button class="slideDown">下拉</button>
+    <div class="box"></div>
+    <script src="script/jquery.js"></script>
+    <script>
+        $(".slideUp").click(function(){
+            $(".box").slideUp(500)
+        })
+        $(".slideDown").click(function(){
+            $(".box").slideDown(500)
+        })
+    </script>
 </body>
+
 </html>

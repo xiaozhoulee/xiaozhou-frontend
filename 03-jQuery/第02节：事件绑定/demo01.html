@@ -1,28 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <style>
-        .box{
-            width:100px;
-            height:100px;
-            background-color:red;
-        }
-        .bg{
-            background-color: green
-        }
-    </style>
 </head>
+
 <body>
-    <div class="box"></div>
+    <button>按钮</button>
     <script src="script/jquery.js"></script>
     <script>
-        $(".box").mouseenter(function(){
-            $(this).addClass("bg");
-        }).mouseleave(function(){
-            $(this).removeClass("bg");
+        $("button").click(function () {
+            console.log("hello world");
         })
-    </script>  
+    </script>
 </body>
+
 </html>

@@ -2,27 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <style>
-        .box{
-            width:100px;
-            height:100px;
-            background-color:red;
-        }
-        .bg{
-            background-color: green
-        }
-    </style>
 </head>
 <body>
-    <div class="box"></div>
-    <script src="script/jquery.js"></script>
-    <script>
-        $(".box").hover(function(){
-            $(this).addClass("bg");
-        },function(){
-            $(this).removeClass("bg");
-        })
-    </script>  
+    <img src="images/0302_img0.jpg">
+	<script src="script/jquery.js"></script>
+	<script>
+		$("img").click(function(){
+			$(this).attr("src","images/0302_img1.jpg")
+		});
+	</script>
 </body>
 </html>

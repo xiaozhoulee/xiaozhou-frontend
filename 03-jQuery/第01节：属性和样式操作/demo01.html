@@ -11,13 +11,16 @@
 </head>
 <body>
 	<ul class="nav">
-		<li>香蕉</li>
+		<li class="active">香蕉</li>
 		<li>苹果</li>
 		<li>鸭梨</li>
 	</ul>
 	<script src="script/jquery.js"></script>
 	<script>
+		// 利用addClass方法为第二个li元素添加一个class名active
 		$(".nav li:eq(1)").addClass("active");
+		// 利用removeClass方法为第一个li元素删除class名active
+		$(".nav li:eq(0)").removeClass("active");
 	</script>
 </body>
 </html>

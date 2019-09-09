@@ -1,25 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<title>Document</title>
-	<style>
-		.box{
-			width: 100px;
-			height: 100px;
-			background-color: #f00;
-			display: none;
-		}
-	</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: #f00;
+        }
+    </style>
 </head>
+
 <body>
-	<button>下拉</button>
-	<div class="box"></div>
-	<script src="script/jquery.js"></script>
-	<script>
-		$("button").click(function(){
-			$(".box").slideDown(500);  // 500毫秒后显示
-		});
-	</script>
+    <button class="fadeOut">渐入</button>
+    <button class="fadeIn">渐出</button>
+    <div class="box"></div>
+    <script src="script/jquery.js"></script>
+    <script>
+        //渐入
+        $(".fadeOut").click(function(){
+            $(".box").fadeOut(500)
+        })
+        //渐出
+        $(".fadeIn").click(function(){
+            $(".box").fadeIn(500)
+        })
+    </script>
 </body>
+
 </html>

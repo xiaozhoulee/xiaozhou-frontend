@@ -1,26 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
 </head>
 <body>
 	<input type="text">
-	<button>添加</button>
-	<ul class="fruits">
-		<li>香蕉</li>
-		<li>苹果</li>
-		<li>鸭梨</li>
-	</ul>
+	<button>获取并输出value</button>
 	<script src="script/jquery.js"></script>
 	<script>
 		$("button").click(function(){
-			var val = $("input").val();
-			var newli = "<li>"+val+"</li>";
-			$(".fruits").append(newli);
-		})
-		$(".fruits li").click(function(){
-			$(this).remove();
+			var value = $("input").val();  //获取input的value属性值，并赋值给value变量。
+			console.log(value);  
 		})
 	</script>
 </body>
