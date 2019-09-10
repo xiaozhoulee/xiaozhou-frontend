@@ -1,5 +1,5 @@
+# 第九章第3节MySQL具体语句
 ### 语句
-
 ```sql
 --DDL
 create table student(id int,name varchar(20),sex char(1));  --创建表
@@ -52,7 +52,7 @@ select name from user order by name,sal; --多字段排序，先按照name排序
 
 ### 函数
 
-* 聚合函数
+#### 聚合函数
 ```sql
 SELECT count(id) AS total FROM n;   # 总数
 SELECT sum(age) AS all_age FROM n;   # 总和
@@ -60,7 +60,7 @@ SELECT avg(age) AS all_age FROM n;   # 平均值
 SELECT max(age) AS all_age FROM n;   # 最大值
 SELECT min(age) AS all_age FROM n;   # 最小值
 ```
-* 数学函数
+#### 数学函数
 ```sql
 SELECT abs(-5);   # 绝对值
 SELECT bin(15), oct(15), hex(15);   # 二进制，八进制，十六进制
@@ -82,7 +82,7 @@ SELECT sign(5);    # 符号的值正数1
 SELECT sqrt(9);   # 平方根3
 SELECT sqrt(9);   # 平方根3
 ```
-* 字符串函数
+#### 字符串函数
 ```sql
 SELECT concat('a', 'p', 'p', 'le');   # 连接字符串-apple
 SELECT concat_ws(',', 'a', 'p', 'p', 'le');   # 连接用','分割字符串-a,p,p,le
@@ -104,7 +104,9 @@ SELECT position('i' IN 'chinese');    # 返回'i'在'chinese'的第一个位置-
 SELECT position('e' IN 'chinese');    # 返回'i'在'chinese'的第一个位置-5
 SELECT strcmp('abc', 'abd');    # 比较字符串，第一个参数小于第二个返回负数- -1
 SELECT strcmp('abc', 'abb');    # 比较字符串，第一个参数大于第二个返回正数- 1
-# 时间函数
+```
+#### 时间函数
+```sql
 SELECT current_date, current_time, now();    # 2018-01-13   12:33:43    2018-01-13 12:33:43
 SELECT hour(current_time), minute(current_time), second(current_time);    # 12  31   34
 SELECT year(current_date), month(current_date), week(current_date);   # 2018    1   1
@@ -112,7 +114,7 @@ SELECT quarter(current_date);   # 1
 SELECT monthname(current_date), dayname(current_date);   # January  Saturday
 SELECT dayofweek(current_date), dayofmonth(current_date), dayofyear(current_date);    # 7   13  13
 ```
-* 控制流函数
+#### 控制流函数
 ```sql
 SELECT if(3>2, 't', 'f'), if(3<2, 't', 'f');    # t f
 SELECT ifnull(NULL, 't'), ifnull(2, 't');    # t 2
@@ -125,7 +127,7 @@ SELECT CASE 2
        ELSE 'other'
        END ;     # second
 ```
-* 系统信息函数
+#### 系统信息函数
 ```sql
 SELECT database();    # 当前数据库名-test
 SELECT connection_id();   # 当前用户id-306
@@ -133,7 +135,7 @@ SELECT user();    # 当前用户-root@localhost
 SELECT version();   # 当前mysql版本
 SELECT found_rows();    # 返回上次查询的检索行数
 ```
-以下是函数的一些例子：
+#### 以下是函数的一些例子：
 ```sql
 select lower(name) from user; --查询员工姓名，并将信命转换成小写。
 select upper(name) from user; --查询员工姓名，并将信命转换成大写。
@@ -176,7 +178,7 @@ SET PASSWORD FOR 'test'@'localhost' = PASSWORD('test');
 UPDATE mysql.user SET Password=Password('t') WHERE User='test' AND Host='localhost';
 FLUSH PRIVILEGES ;
 ```
-* 用户授权
+#### 用户授权
 ```sql
 GRANT ALL PRIVILEGES ON *.* TO test@localhost IDENTIFIED BY 'test';
 ```
@@ -189,7 +191,7 @@ FLUSH PRIVILEGES ;   # 刷新系统权限表,使授予权限生效
 REVOKE DELETE ON *.* FROM 'test'@'localhost';   # 取消该用户的删除权限
 ```
 ### 存储过程
-* 创建存储过程
+#### 创建存储过程
 ```sql
 DELIMITER //    # 无参数
 CREATE PROCEDURE getDates()
@@ -235,7 +237,7 @@ CALL getDates_4(@i);
 SELECT @i;    # @i = 2
 ```
 
-###键
+### 键
 * 添加主键
 ```sql
 ALTER TABLE n ADD PRIMARY KEY (id);
@@ -277,7 +279,7 @@ CREATE INDEX i_age ON n(age);
 DROP INDEX u_name ON n;
 DROP INDEX i_age ON n;
 ```
-###联接
+### 联接
 * 内联接
 ```sql
 SELECT * FROM m INNER JOIN n ON m.id = n.id;
