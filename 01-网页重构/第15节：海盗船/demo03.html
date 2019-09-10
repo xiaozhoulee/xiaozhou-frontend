@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 100%;
+            height: 900px;
+            background-image: url(../../images/0115bg.png);
+        }
+
+        .img1 {
+            position: absolute;
+            top: 700px;
+            animation: tocolor 5s infinite linear;
+        }
+
+        @keyframes tocolor {
+            17% {
+                transform: translate(250px, -400px);
+            }
+
+            34% {
+                transform: translatex(500px)
+            }
+
+            50% {
+                transform: translate(750px, -400px)
+            }
+
+            66% {
+                transform: translateX(1000px)
+            }
+
+            82% {
+                transform: translate(1250px, -400px)
+            }
+
+            100% {
+                transform: translateX(1500px)
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <img class="img1" src="../../images/0115yu.png" alt="">
+    </div>
+</body>
+
+</html>
