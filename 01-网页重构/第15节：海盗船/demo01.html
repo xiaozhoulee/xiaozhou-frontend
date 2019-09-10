@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box2 {
+            width: 100%;
+            height: 250px;
+            padding-top: 650px;
+        }
+        .img3 {
+            width: 2000px;
+            height: 150px;
+            float: left;
+            position: fixed;
+            top: 650px;
+            animation: toimg3 5s infinite alternate;
+        }
+
+        .box2_top {
+            float: left;
+        }
+
+        .box2_top1 {
+            float: left;
+        }
+
+        @keyframes toimg3 {
+            30% {
+                transform: translateX(-50px);
+            }
+        }
+
+        @keyframes toimg4 {
+            52% {
+                transform: translateX(-50px);
+                animation-delay: 0.1s;
+            }
+        }
+
+        @keyframes toimg5 {
+            65% {
+                transform: translateX(-50px);
+            }
+        }
+
+        .img4 {
+            width: 2000px;
+            float: left;
+            height: 150px;
+            position: fixed;
+            top: 700px;
+            animation: toimg4 4s infinite alternate;
+        }
+
+        .img5 {
+            width: 2000px;
+            float: left;
+            height: 150px;
+            position: fixed;
+            top: 750px;
+            animation: toimg5 5s infinite alternate;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box2">
+        <div class="box2_top">
+            <img class="img3" src="../../images/0115wave1.png" alt="">
+        </div>
+        <div class="box2_top1">
+            <img class="img4" src="../../images/0115wave2.png" alt="">
+        </div>
+        <div class="box2_top2">
+            <img class="img5" src="../../images/0115wave1.png" alt="">
+        </div>
+    </div>
+
+</body>
+
+</html>

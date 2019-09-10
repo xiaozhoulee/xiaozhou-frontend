@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .box {
+            width: 100%;
+            height: 900px;
+            background-image: url(../../images/0115bg.png);
+        }
+
+        .box2 {
+            width: 100%;
+            height: 250px;
+            padding-top: 650px;
+
+        }
+
+        .img1 {
+            position: absolute;
+            top: 700px;
+            animation: tocolor 5s infinite linear;
+        }
+
+        @keyframes tocolor {
+            17% {
+                transform: translate(250px, -400px);
+            }
+
+            34% {
+                transform: translatex(500px)
+            }
+
+            50% {
+                transform: translate(750px, -400px)
+            }
+
+            66% {
+                transform: translateX(1000px)
+            }
+
+            82% {
+                transform: translate(1250px, -400px)
+            }
+
+            100% {
+                transform: translateX(1500px)
+            }
+
+        }
+
+        .img2 {
+            margin-left: 330px;
+            position: absolute;
+            top: 180px;
+            left: 280px;
+            animation: toimg2 3s infinite;
+        }
+
+        @keyframes toimg2 {
+            25% {
+                transform: rotate(15deg);
+            }
+
+            50% {
+                transform: rotate(15deg);
+            }
+        }
+
+        .img3 {
+            width: 2000px;
+            height: 150px;
+            float: left;
+            position: fixed;
+            top: 650px;
+            animation: toimg3 5s infinite alternate;
+        }
+
+        .box2_top {
+            float: left;
+        }
+
+        .box2_top1 {
+            float: left;
+        }
+
+        @keyframes toimg3 {
+            30% {
+                transform: translateX(-50px);
+            }
+        }
+
+        @keyframes toimg4 {
+            52% {
+                transform: translateX(-50px);
+                animation-delay: 0.1s;
+            }
+        }
+
+        @keyframes toimg5 {
+            65% {
+                transform: translateX(-50px);
+            }
+        }
+
+        .img4 {
+            width: 2000px;
+            float: left;
+            height: 150px;
+            position: fixed;
+            top: 700px;
+            animation: toimg4 4s infinite alternate;
+        }
+
+        .img5 {
+            width: 2000px;
+            float: left;
+            height: 150px;
+            position: fixed;
+            top: 750px;
+            animation: toimg5 5s infinite alternate;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <img class="img1" src="../../images/0115yu.png" alt="">
+        <div class="box1">
+            <img class="img2" src="../../images/0115ship.png" alt="">
+        </div>
+        <div class="box2">
+            <div class="box2_top">
+                <img class="img3" src="../../images/0115wave1.png" alt="">
+            </div>
+            <div class="box2_top1">
+                <img class="img4" src="../../images/0115wave2.png" alt="">
+            </div>
+            <div class="box2_top2">
+                <img class="img5" src="../../images/0115wave2.png" alt="">
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
