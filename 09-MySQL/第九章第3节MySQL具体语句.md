@@ -303,3 +303,17 @@ SELECT id,name FROM m
 UNION
 SELECT id,name FROM n;
 ```
+### 其他语句
+* 查看所有的表信息（包括视图）
+```sql
+SHOW TABLE STATUS;
+```
+* 数据库备份
+```sql
+mysqldump -u root -p db_name > file.sql
+mysqldump -u root -p db_name table_name > file.sql
+```
+* 数据库还原
+```sql
+mysql -u root -p < C:\file.sql
+```
