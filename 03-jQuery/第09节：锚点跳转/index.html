@@ -62,10 +62,11 @@
 	<script type="text/javascript">
 		//添加全屏滚动的效果
 		$("#nav li a").click(function(){
-			// 获取a标签对应内容的id
+			// 获取a标签对应内容的href属性的属性值
 			var href = $(this).attr("href");
 			// 获取菜单对应的元素
 			var $elem = $(href);
+			console.log($elem)
 			if($elem[0]){
 				//获取容器元素距离顶部的距离
 				var offsetTop = $elem.offset().top;
@@ -73,7 +74,7 @@
 				$("html,body").animate({scrollTop:offsetTop},500);
 			}
 			return false;
-		})
+		})	
 	</script>
 </body>
 </html>

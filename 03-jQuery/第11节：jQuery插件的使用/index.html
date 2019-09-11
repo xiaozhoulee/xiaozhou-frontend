@@ -54,6 +54,7 @@
     <input type="button" id="next" value="下一张">
 
     <script type="text/javascript" src="script/jquery-1.11.1.js"></script>
+    <!-- 引用cycle插件 -->
     <script type="text/javascript" src="script/jquery.cycle.all.js"></script>
     <script>
       
@@ -68,16 +69,19 @@
       //点击数字列表，切换到指定的图片
       $("#numList li").click(function(){
         var index = $(this).index();
+        //传递索引可以跳转到指定图片，并切换数字列表的背景色
         $("#picList").cycle(index);
         $(this).addClass("active").siblings().removeClass("active");
       })
 
       //点击切换至上一张图片
+      // 传递prev可以切换至上一张
       $("#prev").click(function(){
             $("#picList").cycle("prev");
       });
 
-      //点击切换至下一章图片
+      //点击切换至下一张图片
+      //传递next可以切换至下一张
        $("#next").click(function(){
             $("#picList").cycle("next");
       });

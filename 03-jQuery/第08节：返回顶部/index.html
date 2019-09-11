@@ -65,7 +65,9 @@
 	<script>
 		// 绑定网页滚轮滚动事件
 		$(window).scroll(function(){
-			// 如果网页滚轮滚动，显示返回顶部
+			//  如果网页的滚动条距离大于0（也就是没有在顶部）
+			// 显示返回顶部,如果网页的滚动条距离等于0（在顶部）,
+			// 就不显示返回顶部按钮
 			if($(this).scrollTop() > 0){
 				$(".to-top").addClass("to-top-show");
 			}else{
@@ -74,6 +76,7 @@
 		})
 		// 点击返回顶部按钮时，页面动态滚动到页面最上方。
 		$(".to-top").click(function(){
+			// 自定义动画（animate）让scrollTop值为0 也就是回到最上方
 			$("html,body").animate({
 				scrollTop:0
 			},500)

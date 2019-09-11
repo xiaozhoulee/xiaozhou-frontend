@@ -40,11 +40,11 @@
 <body>
 	<div class="box">
 		<ul class="pic-list">
-			<li><img src="images/0.jpg" alt=""></li>
-			<li><img src="images/1.jpg" alt=""></li>
-			<li><img src="images/2.jpg" alt=""></li>
-			<li><img src="images/3.jpg" alt=""></li>
-			<li><img src="images/4.jpg" alt=""></li>
+			<li><img src="images/0310_img0.jpg" alt=""></li>
+			<li><img src="images/0310_img1.jpg" alt=""></li>
+			<li><img src="images/0310_img2.jpg" alt=""></li>
+			<li><img src="images/0310_img3.jpg" alt=""></li>
+			<li><img src="images/0310_img4.jpg" alt=""></li>
 		</ul>
 	</div>
 	<ul class="num-list">
@@ -59,6 +59,8 @@
 		$(".num-list li").click(function(){
 			var index = $(this).index(); //获取列表索引
 			var marleft = -650 * index;  //计算需要移动的margin-left值
+			console.log(marleft)
+			console.log("888888888888")
 			$(this).addClass("active").siblings().removeClass("active");
 			$(".pic-list").animate({
 				"margin-left":marleft 
