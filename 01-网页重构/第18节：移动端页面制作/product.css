@@ -1,0 +1,308 @@
+* {
+    margin: 0;
+    padding: 0;
+    /* box-sizing: border-box; */
+}
+
+.header {
+    width: 7.2rem;
+    height: 0.96rem;
+    background-color: #2aacff;
+}
+
+.header img {
+    float: left;
+    width: 0.2rem;
+    height: 0.4rem;
+    margin-top: 0.29rem;
+    margin-left: 0.3rem;
+}
+
+.header p {
+    color: white;
+    font-size: 0.34rem;
+    line-height: 0.96rem;
+    text-align: center;
+}
+
+.content {
+    width: 7.2rem;
+    height: 37.80rem;
+}
+
+.content .money {
+    width: 7.2rem;
+    height: 4.29rem;
+    border-bottom: 1px solid #cccccc;
+    box-sizing: border-box;
+}
+
+.content .money img {
+    width: 7.2rem;
+    height: 4.29rem;
+}
+
+.content .text {
+    width: 7.2rem;
+    height: 1.41rem;
+}
+
+.content .text h5 {
+    font-size: 0.32rem;
+    margin-left: 0.3rem;
+    float: left;
+}
+
+.content .text span {
+    clear: both;
+    float: left;
+    margin-left: 0.3rem;
+    margin-top: 0.2rem;
+    font-size: 0.26rem;
+    color: #8a8a8a;
+}
+
+.content .text p {
+    float: left;
+    margin-top: 0.2rem;
+    font-size: 0.26rem;
+    color: red;
+}
+
+.content .tab {
+    width: 7.2rem;
+    height: 0.96rem;
+}
+
+.content .tab ul li {
+    width: 50%;
+    height: 100%;
+    font-size: 0.3rem;
+    float: left;
+    list-style: none;
+    text-align: center;
+    line-height: 0.96rem;
+    border: 1px solid #cccccc;
+    box-sizing: border-box;
+}
+
+.content .tab ul .miao {
+    border-left: 0px;
+}
+
+.content .tab ul .num {
+    border-right: 0px;
+}
+
+.content .tab ul li:hover {
+    border-bottom: 3px solid red;
+    color: red;
+    box-sizing: border-box;
+}
+
+.content .haitun1 {
+    width: 7.2rem;
+    height: 4.704rem;
+    float: left;
+}
+
+.content .why {
+    width: 7.2rem;
+    height: 4.77rem;
+    float: left;
+}
+
+.content .IPS {
+    clear: both;
+    width: 7.2rem;
+    height: 7.43rem;
+    float: left;
+}
+
+.content .IPS .center {
+    text-align: center;
+}
+
+.content .IPS .screen {
+    margin-top: 0.5rem;
+    font-size: 0.38rem;
+}
+
+.content .IPS .plate {
+    margin-top: 0.32rem;
+    font-size: 0.3rem;
+}
+
+.content .IPS .TFT {
+    margin-top: 0.45rem;
+    font-size: 0.22rem;
+}
+
+.content .IPS .TF {
+    margin-top: 0.16rem;
+    font-size: 0.22rem;
+}
+
+.content .IPS .flower {
+    width: 7.2rem;
+    height: 4.8rem;
+}
+
+.content .size {
+    clear: both;
+    width: 7.2rem;
+    height: 14.1rem;
+    background-color: #e5e5e5;
+    clear: both;
+    float: left;
+}
+
+.content .size .center {
+    text-align: center;
+}
+
+.content .size .gold {
+    font-size: 0.43rem;
+    margin-top: 0.62rem;
+}
+
+.content .size .Example {
+    font-size: 0.28rem;
+    margin-top: 0.26rem;
+}
+
+.content .size .shadow {
+    width: 7.2rem;
+    height: 5.28rem;
+}
+
+.content .size .NOknow {
+    font-size: 0.3rem;
+}
+
+.content .size .red {
+    margin-top: 0.34rem;
+    font-size: 0.26rem;
+    color: #989898;
+    margin-top: 0.5rem;
+}
+
+.content .size .red span {
+    color: red;
+}
+
+.content .size ul li {
+    width: 6.6rem;
+    height: 0.56rem;
+    margin-left: 0.3rem;
+    margin-right: 0.3rem;
+}
+
+.content .size ul li span {
+    font-size: 0.25rem;
+    float: left;
+    width: 1.92rem;
+    height: 100%;
+    margin-left: 0.2rem;
+    line-height: 0.56rem;
+    border-right: 1px solid black;
+}
+
+.content .size ul .white {
+    background-color: white;
+}
+
+.content .size ul .BigWhite {
+    height: 2rem;
+    background-color: white;
+}
+
+.content .size ul .BigWhite span {
+    line-height: 0.3rem;
+}
+.footer{
+    width: 7.2rem;
+    height: 7.58rem;
+}
+.footer .pic2{
+    width: 1.91rem;
+    height: 0.9rem;
+    position: absolute;
+    top: 38.1rem;
+    left: 5rem;
+    /* z-index: 100; */
+}
+.footer .pic1{
+    width: 1.1rem;
+    height: 1.1rem;
+    position: absolute;
+    top: 37.92rem;
+    right: 5.8rem;
+    /* z-index: 100; */
+}
+.footer .top{
+    width: 6.6rem;
+    height: 3.2rem;
+    float: left;
+    margin-left: 0.3rem;
+    margin-top: 0.2rem;
+    background-color: #c2c2c2;
+    color: #ffffff;
+}
+.footer .top .left{
+    width: 2.16rem;
+    height: 3.16rem;
+    /* border: 1px solid red; */
+    float: left;
+}
+.footer .top h3{
+    font-size: 18px;
+    margin-left: 0.47rem;
+    margin-top: 0.25rem;
+}
+.footer .top span{
+    font-size: 12px;
+    float: left;
+    margin-left: 0.15rem;
+    margin-top: -0.1rem;
+}
+.footer .top img{
+    width: 1.27rem;
+    height: 0.93rem;
+    margin-left: 0.47rem;
+    margin-top: 0.3rem;
+}
+.footer .top .Middle{
+    width: 2.16rem;
+    height: 3.16rem;
+    border-left: 1px solid #ffffff;
+    float: left;
+}
+.footer .top .right{
+    width: 2.16rem;
+    height: 3.16rem;
+    border-left: 1px solid #ffffff;
+    float: left;
+}
+.footer .bottom{
+    clear: both;
+}
+.footer .bottom img{
+    width: 1.82rem;
+    height: 1.82rem;
+    margin-left: 2.69rem;
+}
+.footer .bottom p{
+    font-size: 15px;
+    margin-top: 0.47rem;
+    margin-left: 1.53rem;
+    float: left;
+    margin-bottom: 0.36rem;
+    color: #666666;
+}
+.footer .bottom span{
+    font-size: 12px;
+    display: block;
+    margin-left: 2.77rem;
+    color: #323232;
+}
