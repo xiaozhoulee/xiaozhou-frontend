@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<table class="table table-striped">
+    <thead>
+        <th>序号</th>
+        <th>学生姓名</th>
+        <th>所在班级</th>
+        <th>删除学生</th>
+    </thead>
+    <tbody>
+        {% for item in studentList %}
+        <tr>
+            <td>{{loop.index}}</td>
+            <td>{{item.name}}</td>
+            <td>{{item.clazz.name}}</td>
+            <td>
+                <form action="/deletestudent" method="post">
+                    <input type="text" name="student_id" style="display:none" value="{{item.id}}">
+                    <button type="submit">删除</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
