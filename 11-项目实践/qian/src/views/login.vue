@@ -8,49 +8,58 @@
       
       <form @submit.prevent="login">
         <h2>学生管理系统</h2>
-        <input type="text" placeholder="用户名" class="user" v-model="username">
-        <input type="password" placeholder="密码" class="pass" v-model="password">
+        <input type="text" placeholder="用户名" class="user" v-model="dataQ.username">
+        <input type="password" placeholder="密码" class="pass" v-model="dataQ.password">
        <button class="btn" type="primary" >登陆</button>
       </form>
   </div>
 </template>
 
 <script>
+import request from '../utils/request.js'
 import axios from 'axios';
 import md5 from 'js-md5';
+// import { request } from 'http';
 export default {
   name: "login",
   data() {
     return {
+      dataQ:{
         username: '',
         password: ''
+      }
     };
   },
   methods: {
     login() {
-      axios
-        .post("http://127.0.0.1:7001/login", {
-          username: this.username,
-          // password: this.password
-          password: md5(this.password)
-        })
-        .then(res => {
-          if (res.data.data == "密码错误！" ) {
-            alert("密码错误！");
-          };
-          console.log(res.data.data)
-          if (res.data.data == "用户不存在") {
-            alert("用户不存在");   
-          };
-          if (res.data.data == "登录成功") {
-            this.$router.push("/MenuList");
-
-            console.log(res.data)
-          };
-        })
-        .catch(err => {
-          console.log(err);
-        });
+      request({
+        url:"/login",
+        method:'post',
+        data:this.dataQ
+      }).then(res => {
+            if (res.data == "密码错误！" ) {
+              alert("密码错误！");
+            };
+            console.log(888888888)
+            if (res.data == "用户不存在") {
+            console.log(888888888)
+              alert("用户不存在");   
+            };
+            if (res.code == 200 ) {
+              localStorage.setItem("token",res.data)
+              this.$router.push("/MenuList");
+              console.log(res.data)
+            };
+          })
+          .catch(err => {
+            console.log(err);
+          });
+      // axios
+      //   .post("http://127.0.0.1:7001/login", {
+      //     username: this.username,
+      //     // password: this.password
+      //     password: md5(this.password)
+      //   })
     }
 
 }

@@ -21,8 +21,8 @@ export default {
         },
         logout(){
             localStorage.setItem("token","");
-            console.log(localStorage.getItem("token"))
             location.reload();
+            console.log(localStorage.getItem("token"))
         }
     }
 };

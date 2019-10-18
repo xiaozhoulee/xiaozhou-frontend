@@ -4,6 +4,8 @@ import login from './views/login.vue'
 import Class from './views/Class.vue'
 import MenuList from './components/MenuList.vue'
 import Student from './views/Student.vue'
+import Cookies from 'js-cookie'
+// import Router from 'vue-router'
 
 Vue.use(Router)
 

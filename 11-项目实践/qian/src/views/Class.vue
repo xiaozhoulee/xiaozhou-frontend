@@ -3,12 +3,13 @@
     <MenuList></MenuList>
     <form action @submit="insertClazz">
       <el-button type="primary" @click="insertclazz = true">添加</el-button>
+       <el-button type="danger" @click="quit()">退出登录</el-button>
     </form>
     <el-table :data="clazzList" style="width: 60%">
       <el-table-column label="序号" width="180">
         <template slot-scope="scope">
           <i class="el-icon-time"></i>
-          <span style="margin-left: 10px">{{ scope.$index }}</span>
+          <span style="margin-left: 10px">{{ scope.$index + 1}}</span>
         </template>
       </el-table-column>
       <el-table-column label="班级名称" width="180">
@@ -55,8 +56,10 @@
 </template>
 
 <script>
+import request from '../utils/request.js'
 import MenuList from "@/components/MenuList.vue";
 import axios from "axios";
+// import { request } from 'http';
 export default {
   data() {
     return {
@@ -82,6 +85,11 @@ export default {
     };
   },
   methods: {
+    quit(){
+        localStorage.removeItem('token')
+         this.$router.replace('/')
+        console.log("已经执行删除token")
+    },
     editData(id) {
       this.dialogFormVisible = true;
       this.editDataId = id;
@@ -114,10 +122,17 @@ export default {
         });
     },
     getclazzList() {
-      axios.get("http://127.0.0.1:7001/getclazz", {}).then(res => {
-        console.log(res.data);
-        this.clazzList = res.data;
-      });
+      request({
+        url:"/getclazz",
+        method:"get",
+      }).then(res => {
+        console.log(res)
+        this.clazzList = res
+      })
+      // axios.get("http://127.0.0.1:7001/getclazz", {}).then(res => {
+      //   console.log(res.data);
+      //   this.clazzList = res.data;
+      // });
     },
     insertClazz() {
       axios

@@ -28,7 +28,7 @@ module.exports = appInfo => {
       enable: false,
       ignoreJSON: true
     },
-    domainWhiteList: ['http://www.baidu.com', 'http://localhost:8080','http://localhost:8081'], //配置白名单
+    domainWhiteList: ['http://localhost:8080/', 'http://localhost:8080','http://localhost:8081','http://localhost:8080/'], //配置白名单
 };
   
 config.cors = {
@@ -41,10 +41,14 @@ config.cors = {
     host: 'localhost',
     port: '3306',
     username: 'root',
-    password: 'wbh05090417',
+    password: '123456',
     operatorsAliases: false,
   }
 
+  exports.jwt = {
+    secret: "123456"
+  };
+  
   config.view = {
     defaultViewEngine: 'nunjucks'
   }

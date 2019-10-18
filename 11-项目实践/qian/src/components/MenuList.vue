@@ -29,26 +29,6 @@
           <router-link to='/Class' style="width: 139px;"><el-menu-item index="1-1">选项1</el-menu-item></router-link>
         </el-menu-item-group>
       </el-submenu>
-       <el-submenu index="2">
-        <template slot="title">
-          <i class="el-icon-user"></i>
-          <span>教师管理</span>
-        </template>
-        <el-menu-item-group>
-          <template slot="title">教师管理</template>
-          <el-menu-item index="2-1" style="width: 139px;">选项1</el-menu-item>
-        </el-menu-item-group>
-      </el-submenu>
-      <el-submenu index="3">
-        <template slot="title">
-          <i class="el-icon-menu"></i>
-          <span>成绩管理</span>
-        </template>
-        <el-menu-item-group>
-          <template slot="title">成绩管理</template>
-          <el-menu-item index="3-1">选项1</el-menu-item>
-        </el-menu-item-group>
-      </el-submenu>
     </el-menu>
   </el-col>
 

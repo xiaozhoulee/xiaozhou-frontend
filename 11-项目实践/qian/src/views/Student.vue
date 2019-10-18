@@ -1,5 +1,5 @@
 <template>
-  <div id='student'>
+  <div id="student">
     <MenuList></MenuList>
     <el-dialog title :visible.sync="insertstudent">
       <el-form :model="form">
@@ -18,12 +18,13 @@
       </div>
     </el-dialog>
     <el-button type="primary" @click="insertstudent = true">添加</el-button>
+    <el-button type="danger" @click="quit">退出登录</el-button>
 
     <el-table :data="studentList" style="width: 80%">
       <el-table-column label="序号" width="180">
         <template slot-scope="scope">
           <i class="el-icon-time"></i>
-          <span style="margin-left: 10px">{{ scope.$index }}</span>
+          <span style="margin-left: 10px">{{ scope.$index + 1 }}</span>
         </template>
       </el-table-column>
       <el-table-column label="学生名称" width="180">
@@ -76,9 +77,11 @@ import MenuList from "@/components/MenuList.vue";
 
 import { create } from "domain";
 import axios from "axios";
+import request from "../utils/request.js";
+// import { request } from 'http';
 export default {
   data() {
-    name:'student'
+    name: "student";
     return {
       insertstudent: false,
       putid: "",
@@ -105,6 +108,11 @@ export default {
     };
   },
   methods: {
+    quit() {
+      localStorage.removeItem("token");
+      this.$router.replace("/");
+      console.log("已经执行删除token");
+    },
     put(id) {
       this.dialogFormVisible = true;
       this.putid = id;
@@ -141,15 +149,20 @@ export default {
         .catch(_ => {});
     },
     getclazzList() {
-      axios.get("http://127.0.0.1:7001/getclazz", {}).then(res => {
-        console.log(res.data);
-        this.clazzList = res.data;
+      request({
+        url: "/getclazz",
+        method: "get"
+      }).then(res => {
+        this.clazzList = res;
       });
     },
     getstudentList() {
-      axios.get("http://127.0.0.1:7001/getstudent", {}).then(res => {
-        console.log(res.data);
-        this.studentList = res.data;
+      request({
+        url: "getstudent",
+        method: "get"
+      }).then(res => {
+        console.log(res);
+        this.studentList = res;
       });
     },
     insertStudent() {
