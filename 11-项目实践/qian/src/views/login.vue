@@ -1,16 +1,10 @@
 <template>
   <div id='login'>
-    <!-- <form action="" method="post" @submit="login">
-      <label for="" style="margin-top: 22px;">账户</label><input type="text" name="" id="" v-model="loginForm.username">
-      <label for="" style="margin-top: 22px;">密码</label><input type="password" name="" id="" v-model="loginForm.password">
-      <router-link to='/MenuList'><el-button type="primary" class="log" @click="login">用户登陆</el-button></router-link>
-      </form> -->
-      
       <form @submit.prevent="login">
         <h2>学生管理系统</h2>
         <input type="text" placeholder="用户名" class="user" v-model="dataQ.username">
         <input type="password" placeholder="密码" class="pass" v-model="dataQ.password">
-       <button class="btn" type="primary" >登陆</button>
+       <button class="btn" type="primary" >登录</button>
       </form>
   </div>
 </template>
@@ -32,22 +26,23 @@ export default {
   },
   methods: {
     login() {
+      console.log(this.dataQ)
+      console.log(666)
       request({
         url:"/login",
         method:'post',
         data:this.dataQ
       }).then(res => {
-            if (res.data == "密码错误！" ) {
+        console.log(res)
+            if (res.data.data == "密码错误！" ) {
               alert("密码错误！");
             };
-            console.log(888888888)
-            if (res.data == "用户不存在") {
-            console.log(888888888)
+            if (res.data.data == "用户不存在") {
               alert("用户不存在");   
             };
-            if (res.code == 200 ) {
+            if (res.data.code == 20000 ) {
               localStorage.setItem("token",res.data)
-              this.$router.push("/MenuList");
+              this.$router.push("/Class");
               console.log(res.data)
             };
           })

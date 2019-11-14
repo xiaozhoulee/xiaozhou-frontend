@@ -16,7 +16,7 @@
         <template slot-scope="scope">
           <el-popover trigger="hover" placement="top">
             <div slot="reference" class="name-wrapper">
-              <el-tag size="medium">{{ scope.row.name }}</el-tag>
+              <el-tag size="medium">{{ scope.row.clazzname }}</el-tag>
             </div>
           </el-popover>
         </template>
@@ -105,9 +105,10 @@ export default {
           axios
             .delete("http://127.0.0.1:7001/deleteclazz" + id, {})
             .then(res => {
+              console.log(res.data)
               this.dialogVisible = false;
-              if (res.data == "班级中存在学生，不可删除班级") {
-                alert(res.data);
+              if (res.data.data == "班级中存在学生，不可删除班级") {
+                alert(res.data.data);
               } else {
                 this.clazzList = res.data;
                 this.getclazzList();
@@ -127,12 +128,9 @@ export default {
         method:"get",
       }).then(res => {
         console.log(res)
-        this.clazzList = res
+        this.clazzList = res.data
+        console.log(this.clazzList)
       })
-      // axios.get("http://127.0.0.1:7001/getclazz", {}).then(res => {
-      //   console.log(res.data);
-      //   this.clazzList = res.data;
-      // });
     },
     insertClazz() {
       axios

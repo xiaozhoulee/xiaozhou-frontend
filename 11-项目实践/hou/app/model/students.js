@@ -4,7 +4,9 @@ module.exports = app => {
     } = app.Sequelize;
 
     const Students = app.model.define('students', {
-        name: STRING,
+        studentname: STRING,
+        sex:STRING,
+        age:STRING
     })
 
     Students.associate = function () {

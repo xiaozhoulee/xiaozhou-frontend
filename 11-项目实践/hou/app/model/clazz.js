@@ -4,7 +4,7 @@ module.exports = app => {
     } = app.Sequelize;
 
     const Clazz = app.model.define('clazz', { //sequelize会自动创建主键
-        name: STRING,
+        clazzname: STRING,
     })
 
     return Clazz;

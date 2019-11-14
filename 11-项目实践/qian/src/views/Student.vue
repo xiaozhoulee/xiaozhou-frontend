@@ -6,14 +6,22 @@
         <el-form-item label="学生名称" :label-width="formLabelWidth">
           <el-input v-model="studentname" placeholder="请输入学生姓名"></el-input>
         </el-form-item>
+        <el-form-item label="学生年龄" :label-width="formLabelWidth">
+           <el-input-number v-model="studentage" :max="99" label="可输入"></el-input-number>
+        </el-form-item>
+        <el-form-item label="学生性别" :label-width="formLabelWidth">
+          <el-select v-model="sex" placeholder="请选择性别">
+            <el-option v-for="item in sexList" :label="item.sex" :value="item.sex"></el-option>
+          </el-select>
+        </el-form-item>
         <el-form-item label="学生班级" :label-width="formLabelWidth">
           <el-select v-model="clazz_id" placeholder="请选择班级">
-            <el-option v-for="item in clazzList" :label="item.name" :value="item.id"></el-option>
+            <el-option v-for="item in clazzList" :label="item.clazzname" :value="item.id"></el-option>
           </el-select>
         </el-form-item>
       </el-form>
       <div slot="footer" class="dialog-footer">
-        <el-button @click="insertstudent = false">取 消</el-button>
+        <el-button @click="insertno()">取 消</el-button>
         <el-button type="primary" @click="insertStudent()">确 定</el-button>
       </div>
     </el-dialog>
@@ -31,7 +39,26 @@
         <template slot-scope="scope">
           <el-popover trigger="hover" placement="top">
             <div slot="reference" class="name-wrapper">
-              <el-tag size="medium">{{ scope.row.name }}</el-tag>
+              <el-tag size="medium">{{ scope.row.studentname }}</el-tag>
+            </div>
+          </el-popover>
+        </template>
+      </el-table-column>
+      <el-table-column label="学生年龄" width="180">
+        <template slot-scope="scope">
+          <el-popover trigger="hover" placement="top">
+            <div slot="reference" class="name-wrapper">
+              <el-tag size="medium">{{ scope.row.age }}</el-tag>
+            </div>
+          </el-popover>
+        </template>
+      </el-table-column>
+      
+        <el-table-column label="学生性别" width="180">
+        <template slot-scope="scope">
+          <el-popover trigger="hover" placement="top">
+            <div slot="reference" class="name-wrapper">
+              <el-tag size="medium">{{ scope.row.sex }}</el-tag>
             </div>
           </el-popover>
         </template>
@@ -40,7 +67,7 @@
         <template slot-scope="scope">
           <el-popover trigger="hover" placement="top">
             <div slot="reference" class="name-wrapper">
-              <el-tag size="medium">{{ scope.row.clazz.name }}</el-tag>
+              <el-tag size="medium">{{ scope.row.clazz.clazzname }}</el-tag>
             </div>
           </el-popover>
         </template>
@@ -58,9 +85,17 @@
         <el-form-item label="学生名称" :label-width="formLabelWidth">
           <el-input v-model="putstudentname" autocomplete="off"></el-input>
         </el-form-item>
+        <el-form-item label="学生年龄" :label-width="formLabelWidth">
+ <el-input-number v-model="putstudentage" :max="99" label="可输入"></el-input-number>
+        </el-form-item>
+        <el-form-item label="学生性别" :label-width="formLabelWidth">
+          <el-select v-model="sex" placeholder="请选择性别">
+            <el-option v-for="item in sexList" :label="item.sex" :value="item.sex"></el-option>
+          </el-select>
+        </el-form-item>
         <el-form-item label="学生班级" :label-width="formLabelWidth">
           <el-select v-model="clazz_id" placeholder="请选择班级">
-            <el-option v-for="item in clazzList" :label="item.name" :value="item.id"></el-option>
+            <el-option v-for="item in clazzList" :label="item.clazzname" :value="item.id"></el-option>
           </el-select>
         </el-form-item>
       </el-form>
@@ -83,9 +118,12 @@ export default {
   data() {
     name: "student";
     return {
+      sex:"",
       insertstudent: false,
       putid: "",
       putstudentname: "",
+      putstudentage:"",
+      studentage:"",
       dialogVisible: false,
       dialogTableVisible: false,
       dialogFormVisible: false,
@@ -99,6 +137,10 @@ export default {
         resource: "",
         desc: ""
       },
+      sexList:[
+        {sex:"男"},
+        {sex:"女"},
+      ],
       formLabelWidth: "120px",
       studentname: "",
       clazz_id: "",
@@ -108,6 +150,12 @@ export default {
     };
   },
   methods: {
+    insertno(){
+      this.insertstudent = false
+      this.studentage = 0,
+      this.clazz_id = "",
+      this.studentname=""
+    },
     quit() {
       localStorage.removeItem("token");
       this.$router.replace("/");
@@ -150,26 +198,30 @@ export default {
     },
     getclazzList() {
       request({
-        url: "/getclazz",
-        method: "get"
+        url:"getclazz",
+        method:"get",
       }).then(res => {
-        this.clazzList = res;
-      });
+        console.log(res)
+        this.clazzList = res.data
+        console.log(this.clazzList)
+      })
     },
     getstudentList() {
       request({
         url: "getstudent",
         method: "get"
       }).then(res => {
-        console.log(res);
-        this.studentList = res;
+        this.studentList = res.data;
+        console.log(this.studentList)
       });
     },
     insertStudent() {
       axios
         .post("http://127.0.0.1:7001/insertstudent", {
           studentname: this.studentname,
-          clazz_id: this.clazz_id
+          clazz_id: this.clazz_id,
+          studentage:this.studentage,
+          studentsex:this.sex
         })
         .then(res => {
           this.getstudentList();
@@ -183,7 +235,9 @@ export default {
     putstudent() {
       axios
         .put("http://127.0.0.1:7001/putstudent" + this.putid, {
+          putstudentage: this.putstudentage,
           putstudentname: this.putstudentname,
+          studentsex: this.sex,
           clazz_id: this.clazz_id
         })
         .then(res => {
@@ -192,6 +246,8 @@ export default {
           this.studentList = res.data;
           this.putstudentname = "";
           this.clazz_id = "";
+          this.putstudentage = "";
+          this.sex = "";
         });
     }
   },

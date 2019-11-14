@@ -37,7 +37,7 @@ config.cors = {
 }
   config.sequelize = {
     dialect: 'mysql', 
-    database: 'egg',
+    database: 'studentsystem',
     host: 'localhost',
     port: '3306',
     username: 'root',

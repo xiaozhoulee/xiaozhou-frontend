@@ -9,84 +9,27 @@ class HomeController extends Controller {
     const { ctx } = this;
     const clazzList = await this.app.model.Clazz.findAll();
     ctx.body = clazzList;
-  //  await this.ctx.render('hallo.html',{
-  //     msg:"abcccccc"
-  //   })
   }
   async insert() {
     const { ctx } = this;
     const clazzList = await this.app.model.Clazz.findAll();
     let name = this.ctx.request.body.name;
-    // let name = this.ctx.request.body.name;
-    // list.push(name);
-    // console.log(list)
-    // this.list = list
-    // const body = this.ctx.request.body;
     const clazz = {
         name:name
     }
     await this.app.model.Clazz.create(clazz);
-    // clazzList.push(name)
     ctx.body = clazzList;
-  //  await this.ctx.render('hallo.html',{
-  //     msg:"abcccccc"
-  //   })
   }
 
-  // async destroy() {
-  //   const { ctx } = this;
-  //   const clazzList = await this.app.model.Clazz.findAll();
-  //   // let id = this.ctx.params.index;
-  //   // const eid = this.request.body.clazz_id;
-  //    // 自己探索法
-  //   // let id = this.ctx.request.body.index;
-  //   // 老李获取法
-  //   let id = this.ctx.params.id;
-  //   // console.log(66666666666)
-  //   // var num = Number(id)+2
-  //   console.log(7777)
-  //   console.log(id)
-  //   // console.log(list)
-  //   console.log(8888)
-  //   // console.log(eid)
-  //   // console.log(num)
-  //   console.log(999)
-  // //   // list.splice(id,1); //删除数据
-  //   const student = await this.app.model.Clazz.findOne({
-  //     where: {
-  //         id: id
-  //     }
-  // });
-  // // let idid = id,;
-  // student.destroy();
-  //   ctx.body = clazzList;
-  // }
   async destroy() {
     const { ctx } = this;
     const clazzList = await this.app.model.Clazz.findAll();
-    // let id = this.ctx.params.index;
-    // const eid = this.request.body.clazz_id;
-     // 自己探索法
-    // let id = this.ctx.request.body.index;
-    // 老李获取法
     let id = this.ctx.params.id;
-    // console.log(66666666666)
-    // var num = Number(id)+2
-    console.log(7777)
-    // console.log(id)
-    // console.log(list)
-    console.log(8888)
-    // console.log(eid)
-    // console.log(num)
-    console.log(999)
-  //   // list.splice(id,1); //删除数据
-  // let dname = this.ctx.request.body.dname;
     const student = await this.app.model.Clazz.findOne({
       where: {
           id:id
       }
   });
-  // let idid = id,;
   student.destroy();
     ctx.body = clazzList;
   }

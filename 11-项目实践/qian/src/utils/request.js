@@ -3,17 +3,12 @@ import Cookies from 'js-cookie'
 
 const service = axios.create({
     // baseURL: process.env.BASE_API, // api的base_url
-    baseURL: "http://127.0.0.1:7001"
+    baseURL: "http://127.0.0.1:7001/"
 })
 
 service.interceptors.request.use(config => {
 
     config.headers.token = localStorage.getItem('token');
-    console.log(config)
-    console.log(2222)
-    // if(localStorage.token){
-    //     config.headers.Authorization = localStorage.getItem('token')
-    // }
     return config;
 }, error => {
     console.log(error);

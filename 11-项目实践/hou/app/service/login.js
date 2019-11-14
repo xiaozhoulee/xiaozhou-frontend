@@ -4,6 +4,7 @@ const Service = require('egg').Service;
 
 class LoginService extends Service {
     async index() {
+      try{
         const md5=require('md5-node');
         let username = this.ctx.request.body.username;
         let password = this.ctx.request.body.password;
@@ -13,20 +14,35 @@ class LoginService extends Service {
         console.log(mysql_password)
         let log = await this.app.model.User.findOne({
           where: {
-            name: username
+            username: username
           }
         });
         if (log == null) {
-          return "用户不存在";
+          return {
+            code:30000,
+            data:"用户不存在"
+          }
         }
         //判断密码是否正确，正确则登录成功
         if (mysql_password == log.password) {
           console.log("密码正确")
-          const token = this.app.jwt.sign({ name:username }, this.app.config.jwt.secret);
-          return token
+          const token = this.app.jwt.sign({ username:username }, this.app.config.jwt.secret);
+          return {
+            code:20000,
+            data:token
+          };
         } else {
-          return "密码错误！";
+          return {
+            code:30000,
+            data:"密码错误！"
+          };
         }
+      }catch(error){
+        return{
+          code:30000,
+          data:"失败"
+        }
+      }
       }
 }
 

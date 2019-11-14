@@ -9,7 +9,7 @@ class UserService extends Service {
     console.log(body)
 
     const log = {
-        name: body.username,
+        username: body.username,
         password: md5(body.password),
     };
     console.log(log)
