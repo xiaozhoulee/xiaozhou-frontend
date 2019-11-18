@@ -39,8 +39,6 @@
               <el-button type="primary" @click="putClazz()">确 定</el-button>
             </div>
           </el-dialog>
-
-
             <el-dialog title :visible.sync="insertclazz">
             <el-form :model="form">
               <el-form-item label="班级名称" :label-width="formLabelWidth">
@@ -59,7 +57,6 @@
 import request from '../utils/request.js'
 import MenuList from "@/components/MenuList.vue";
 import axios from "axios";
-// import { request } from 'http';
 export default {
   data() {
     return {
@@ -159,7 +156,7 @@ export default {
     }
   },
   components:{
-MenuList:MenuList
+      MenuList:MenuList
   },
   created() {
     this.getclazzList();

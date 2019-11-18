@@ -13,7 +13,6 @@
 import request from '../utils/request.js'
 import axios from 'axios';
 import md5 from 'js-md5';
-// import { request } from 'http';
 export default {
   name: "login",
   data() {
@@ -26,8 +25,6 @@ export default {
   },
   methods: {
     login() {
-      console.log(this.dataQ)
-      console.log(666)
       request({
         url:"/login",
         method:'post',
@@ -49,12 +46,6 @@ export default {
           .catch(err => {
             console.log(err);
           });
-      // axios
-      //   .post("http://127.0.0.1:7001/login", {
-      //     username: this.username,
-      //     // password: this.password
-      //     password: md5(this.password)
-      //   })
     }
 
 }

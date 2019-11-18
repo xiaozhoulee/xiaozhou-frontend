@@ -100,7 +100,7 @@
         </el-form-item>
       </el-form>
       <div slot="footer" class="dialog-footer">
-        <el-button @click="dialogFormVisible = false">取 消</el-button>
+        <el-button @click="putno()">取 消</el-button>
         <el-button type="primary" @click="putstudent()">确 定</el-button>
       </div>
     </el-dialog>
@@ -113,7 +113,6 @@ import MenuList from "@/components/MenuList.vue";
 import { create } from "domain";
 import axios from "axios";
 import request from "../utils/request.js";
-// import { request } from 'http';
 export default {
   data() {
     name: "student";
@@ -231,6 +230,13 @@ export default {
           this.studentname = "";
           this.clazz_id = "";
         });
+    },
+    putno(){
+        this.dialogFormVisible = false
+        this.putstudentname = "";
+        this.clazz_id = "";
+        this.putstudentage = "";
+        this.sex = "";
     },
     putstudent() {
       axios
