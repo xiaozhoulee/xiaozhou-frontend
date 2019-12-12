@@ -1,1 +1,0 @@
-## 需要先下载 npm install 依赖以后 npm run serve打开
