@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>生成二维码</h1>
+    <div id="qrcode" style="width:100px; height:100px; margin-top:15px;"></div>
+    <script src="qrcode.min.js"></script>
+    <script>
+        let qrcode = new QRCode(document.getElementById("qrcode"), {
+            width: 100, //二维码图片宽度
+            height: 100 //二维码图片高度
+        });
+        // let url = "http://www.xiaozhoubg.com/share?unionid=safdlsadfasfdasfd"
+        let url = "http://baidu.com"
+        qrcode.makeCode(url);
+    </script>
+</body>
+
+</html>
