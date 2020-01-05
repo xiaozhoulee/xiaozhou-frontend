@@ -9,21 +9,35 @@
 <body>
     <form action="">
         <div>
-            <label for="username">用户名：</label>
-            <input id="username" type="text">
+            <label for="username">用户名</label>
+            <input id="username" type="text" placeholder="请输入用户名">
         </div>
         <div>
-            <label for="password">密码：</label>
-            <input id="password" type="password">
+            <label for="psw">密码</label>
+            <input id="psw" type="password" placeholder="请输入密码">
         </div>
         <div>
-            <label>性别:</label>
-            <select>
-                <option>男</option>
-                <option>女</option>
+            <label for="">男</label>
+            <input type="radio" name="sex">
+            <label for="">女</label>
+            <input type="radio" name="sex">
+        </div>
+        <div>
+            <p>请选择你喜欢的水果</p>
+            <label for="">香蕉</label>
+            <input type="checkbox" name="fruit">
+            <label for="">苹果</label>
+            <input type="checkbox" name="fruit">
+        </div>
+        <div>
+            请选择你喜欢的运动
+            <select name="" id="">
+                <option value="">足球</option>
+                <option value="">篮球</option>
+                <option value="">羽毛球</option>
             </select>
         </div>
-        <input type="submit" value="注册">
+        <input type="submit">
     </form>
 </body>
 </html>
