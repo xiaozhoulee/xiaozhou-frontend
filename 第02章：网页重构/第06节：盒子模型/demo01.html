@@ -1,31 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-        .box1 {
-            width: 300px;
-            height: 300px;
-            background-color: #f00;
-        }
-
-        .box2 {
+        .box1{
             width: 100px;
             height: 100px;
-            background-color: #0f0;
-            margin-left: 50px;
+            background-color: red;
+            /* 设置一个值：表示上下左右都是这个值 */
+            /* margin:30px; */
+            /* 设置两个值：第一个值是上下边距，第二个值是左右边距 */
+            /* 设置三个值：第一个值表示上，第二个值表示左右，第三个值表示下 */
+            /* 四个之：顺序是上右下左 */
+            /* margin:30px 0 0 200px; */
+            margin-left:200px;
+            margin-top:30px;
+        }
+        .box2{
+            width: 200px;
+            height: 200px;
+            background-color: blue;   
         }
     </style>
 </head>
-
 <body>
-    <div class="box1">
-        <div class="box2"></div>
-    </div>
+    <div class="box1"></div>
+    <div class="box2"></div>
 </body>
-
 </html>
