@@ -1,0 +1,33 @@
+*{
+    margin:0px;
+    padding:0px;
+}
+.clear::before,.clear::after{
+    content:"";
+    display:block;
+    clear:both;
+}
+.header{
+    background-color: #aaa;
+    height:60px;
+}
+.container{
+    border:1px solid #f00;
+    width:900px;
+    margin:0 auto;
+}
+.container .content{
+    background-color: #00f;
+    width:600px;
+    float: left;
+}
+
+.container .aside{
+    background-color: #ff0;
+    width:300px;
+    float: left;
+}
+.footer{
+    background-color: #0f0;
+    height:60px;
+}

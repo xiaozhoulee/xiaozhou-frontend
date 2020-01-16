@@ -1,0 +1,37 @@
+*{
+    margin:0px;
+    padding:0px;
+}
+.clear::before,.clear::after{
+    content:"";
+    display:block;
+    clear:both;
+}
+.doc_list li{
+    list-style: none;
+}
+.doc_list li .image{
+    float: left;
+    margin:20px 0 20px 20px;
+}
+.doc_list li .text{
+    float: left;
+    padding-left:20px;
+}
+.doc_list li .text h3{
+    margin-top:20px;
+}
+.doc_list li .text p{
+    margin-top:20px;
+}
+.doc_list li .text a{
+    margin-top:20px;
+    display: block;
+    width:80px;
+    height:30px;
+    background-color: #00f;
+    color:#fff;
+    line-height: 30px;
+    text-align: center;
+    text-decoration: none;
+}
