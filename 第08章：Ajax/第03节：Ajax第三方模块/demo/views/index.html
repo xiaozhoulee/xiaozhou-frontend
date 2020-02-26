@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button class="get">查询数据</button>
+    <button class="post">添加数据</button>
+    <button class="put">修改数据</button>
+    <button class="delete">删除数据</button>
+    <!-- <script src="/js/axios.min.js"></script> -->
+    <script src="/js/jquery.min.js"></script>
+    <script>
+        $(".get").click(function(){
+            $.ajax({
+                url:"/fruits",
+                type:"get"
+            }).done(res => {
+                console.log(res,"jQuery的Ajax方法")
+            })
+        })
+
+
+        //get方法返回值是一个Promise对象。
+        // axios.get("/fruits").then( res => {
+        //     console.log(res.data);
+        // } )
+        // document.querySelector(".get").onclick = function(){
+        //     axios.get("/fruits").then( res => {
+        //         console.log(res.data);
+        //     } )
+        // }
+        // document.querySelector(".post").onclick = function(){
+        //     axios.post("/fruits",{
+        //         fruit:"草莓"
+        //     }).then( res => {
+        //         console.log(res.data);
+        //     } )
+        // }
+        // document.querySelector(".put").onclick = function(){
+        //     axios.put("/fruits/1",{
+        //         fruit:"西瓜"
+        //     }).then( res => {
+        //         console.log(res.data);
+        //     } )
+        // }
+        // document.querySelector(".delete").onclick = function(){
+        //     axios.delete("/fruits/0").then( res => {
+        //         console.log(res.data);
+        //     } )
+        // }
+    </script>
+</body>
+
+</html>

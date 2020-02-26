@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            height:1000px;
+        }
+        .box{
+            border:1px solid #f00;
+            width:100px;
+            height:100px;
+        }
+        .box_pos{
+            /* 绝对定位 */
+            /* position: absolute;
+            top:50px;
+            left:50px; */
+            /* 相对定位:参照物 */
+            /* position: relative; */
+            /* 固定定位 */
+            position: fixed;
+            top:50px;
+            left:50px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 三个div -->
+    <div class="box">1</div>
+    <div class="box box_pos">2</div>
+    <div class="box">3</div>
+</body>
+</html>

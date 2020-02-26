@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>server on 8080</h1>
+    <script src="js/axios.min.js"></script>
+    <script>
+        axios.get("http://127.0.0.1:3000/data").then(res =>{
+            console.log(res.data);
+        })
+    </script>
+</body>
+</html>
