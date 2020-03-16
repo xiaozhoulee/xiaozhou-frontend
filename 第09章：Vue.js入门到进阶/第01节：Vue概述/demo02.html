@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- jQuery:主要用来操作DOM -->
+    <!-- vue应用的容器 -->
+    <div id="app">
+        <!-- {{}}双括号可以直接显示Vue实例的属性 -->
+        <h1 :title="message">hello vue</h1>
+        <img :src="imgURL" alt="">
+    </div>
+    <script src="js/vue.js"></script>
+    <script>
+        // Vue构造函数可以创建Vue的实例
+        const vue = new Vue({
+            data:{ //vue实例添加了一个message属性
+                message:"test vue",
+                imgURL:"img/1.jpg"
+            }
+        });
+        //挂载Vue应用
+        vue.$mount("#app");
+    </script>
+</body>
+</html>

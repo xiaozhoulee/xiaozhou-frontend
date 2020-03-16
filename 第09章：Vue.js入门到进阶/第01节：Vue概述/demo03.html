@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <h1>{{title}}</h1>
+        <button @click="showHello">弹出框1</button>
+        <button @click="sayHi">弹出框2</button>
+        <button @click="changeTitle">改变title</button>
+    </div>
+    <script src="js/vue.js"></script>
+    <script>
+        new Vue({
+            data:{
+                title:"事件绑定"
+            },
+            methods:{
+                showHello(){
+                    alert("hello")
+                },
+                sayHi(){
+                    alert("hi")
+                },
+                changeTitle(){
+                    this.title = "hello world";
+                }
+            }
+        }).$mount("#app");
+    </script>
+</body>
+</html>

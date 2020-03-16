@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <button @click="sub">-</button>
+        <span>{{number}}</span>
+        <button @click="add">+</button>
+    </div>
+    <script src="js/vue.js"></script>
+    <script>
+        new Vue({
+            data:{
+                number:0
+            },
+            methods:{
+                add(){
+                    this.number++
+                },
+                sub(){
+                    if(this.number>0){
+                        this.number--
+                    }
+                }
+            }
+        }).$mount("#app");
+    </script>
+</body>
+</html>

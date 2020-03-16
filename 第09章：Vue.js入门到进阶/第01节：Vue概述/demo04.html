@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <!-- vue可以通过事件修饰符来去掉默认行为 -->
+        <form @submit.prevent="showHello">
+            <input type="submit">
+        </form>
+    </div>
+    <script src="js/vue.js"></script>
+    <script>
+        new Vue({
+            methods:{
+                showHello(){
+                    console.log("提交数据")
+                }
+            }
+        }).$mount("#app")
+    </script>
+</body>
+</html>

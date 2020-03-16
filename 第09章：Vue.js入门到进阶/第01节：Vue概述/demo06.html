@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <img :src="url" alt="">
+        <button @click="one">1</button>
+        <button @click="two">2</button>
+        <button @click="three">3</button>
+    </div>
+    <script src="js/vue.js"></script>
+    <script>
+        new Vue({
+            data:{
+                url:"img/1.jpg"
+            },
+            methods:{
+                one(){
+                    this.url = "img/1.jpg"
+                },
+                two(){
+                    this.url = "img/2.jpg"
+                },
+                three(){
+                    this.url = "img/3.jpg"
+                }
+            }
+        }).$mount("#app")
+    </script>
+</body>
+</html>
